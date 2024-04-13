@@ -9,10 +9,10 @@ def books_view(request, p_date=None):
     try:
         year, month, day = [int(x) for x in p_date.split('-')]
         p_date = date(year, month, day)
-        print(p_date)
+        
     except:
         p_date = None
-    page, dates = None, None
+    
     prev, next = '', ''
     if p_date:
         books_objects = Book.objects.filter(pub_date=p_date)
